@@ -370,7 +370,6 @@ destinations:
     params:
       # See jetstream2_user_defined
       singularity_volumes: "$job_directory/tool_script.sh:ro,$job_directory/inputs:ro,$job_directory/configs:ro,$job_directory/tool_files:ro,$job_directory/outputs:rw,$working_directory:rw"
-      remote_metadata: false
       require_container: true
     scheduling:
       accept:
@@ -424,8 +423,6 @@ destinations:
       # callback credentials. User-defined tools don't support reference data, so no CVMFS data
       # repositories, and no shared /dev/shm.
       singularity_volumes: "$job_directory/tool_script.sh:ro,$job_directory/inputs:ro,$job_directory/configs:ro,$job_directory/tool_files:ro,$job_directory/outputs:rw,$working_directory:rw"
-      # Set metadata on the Galaxy side rather than running Galaxy code over the tool's outputs on the node.
-      remote_metadata: false
     scheduling:
       accept:
       - vgp
